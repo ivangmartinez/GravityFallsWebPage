@@ -1,0 +1,515 @@
+@font-face {
+  font-family: 'Gravitation Falls';
+  src: url('../fonts/gravitation_falls.otf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Diario';
+  src: url('../fonts/BethEllen-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* ======== PALETA DE COLORES (Gravity Falls) ======== */
+:root {
+  --color-primario: #352520;   /* fondo oscuro */
+  --color-secundario: #dec387; /* beige claro */
+  --color-acento: #bb8e68;     /* marrón claro */
+  --color-extra1: #8f8266;
+  --color-extra2: #856047;
+  --color-extra3: #66503b;
+  --color-extra4: #6c625d;
+  --color-extra5: #534c46;
+}
+
+/* ======== HEADER con imagen de fondo ======== */
+.header-hero {
+  background: url("../img/pueblo.webp") no-repeat center center/cover;
+  min-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: var(--color-secundario);
+  position: relative;
+  font-family: 'Gravitation Falls';
+   text-shadow: 
+    -2px -2px 0 #000000,  
+    2px -2px 0 #000000,
+    -2px 2px 0 #000000,
+    2px 2px 0 #000000;
+}
+.header-galeria {
+  background: url("../img/Gravity_Falls_Opening_Ending.webp") no-repeat center center/cover;
+  min-height: 20vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: bottom;
+  align-items: center;
+  text-align: center;
+  color: var(--color-secundario);
+  position: relative;
+  font-family: 'Gravitation Falls';
+  text-shadow: 
+    -2px -2px 0 #856047,  
+    2px -2px 0 #856047,
+    -2px 2px 0 #856047,
+    2px 2px 0 #856047;
+}
+.header-temporadas {
+  background: url("../img/bill.webp") no-repeat center center/cover;
+  min-height: 20vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: var(--color-secundario);
+  position: relative;
+  font-family: 'Gravitation Falls';
+  text-shadow: 
+    -2px -2px 0 #856047,  
+    2px -2px 0 #856047,
+    -2px 2px 0 #856047,
+    2px 2px 0 #856047;
+}
+.header-hero::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(53, 37, 32, 0.6); /* overlay con el color primario */
+  z-index: 0;
+}
+
+.header-hero h1,
+.header-hero p {
+  position: relative;
+  z-index: 1;
+}
+
+/* ======== NAVBAR ======== */
+.navbar {
+  background-color: var(--color-primario) !important;
+  font-family: 'Gravitation Falls';
+  
+}
+
+.navbar-brand, 
+.nav-link {
+  color: var(--color-secundario) !important;
+     text-shadow: 
+    -2px -2px 0 #000000,  
+    2px -2px 0 #000000,
+    -2px 2px 0 #000000,
+    2px 2px 0 #000000;
+}
+.nav-link:hover {
+  font-weight: bold;
+  color: var(--color-acento) !important;
+}
+.nav-link.active {
+  font-weight: bold;
+  color: var(--color-acento) !important;
+}
+
+/* ======== ACORDEÓN (temporadas) ======== */
+.accordion-button {
+  background-color: var(--color-primario);
+  color: var(--color-secundario);
+  font-weight: 500;
+  transition: background-color 0.3s ease;
+}
+
+.accordion-button:not(.collapsed) {
+  background-color: var(--color-acento);
+  color: #fff;
+}
+
+.accordion-body {
+  background-color: var(--color-extra1);
+  color: #fff;
+  border-left: 4px solid var(--color-acento);
+}
+
+/* ======== FOOTER ======== */
+footer {
+  background-color: var(--color-primario);
+  color: var(--color-secundario);
+  margin-top: 50px;
+  padding: 15px 0;
+}
+/* Navbar fija en altura */
+.navbar {
+  padding-top: 0.3rem;
+  padding-bottom: 0.3rem;
+  min-height: 60px;
+}
+
+/* Imagen del logo */
+.navbar-brand img {
+  height: 48px;     /* tamaño del logo */
+  width: auto;      /* mantiene proporción */
+  max-height: 100%; /* nunca más alto que la navbar */
+}
+/* ======== GALERÍA DE PERSONAJES ======== */
+.character-card {
+  position: relative;
+  overflow: hidden;
+  border: 4px solid var(--color-acento);
+  border-radius: 15px;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.4);
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+
+.character-card:hover {
+  transform: scale(1.05);
+}
+
+.character-card img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Overlay con nombre + descripción */
+.card-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0; 
+  right: 0;
+  background: rgba(53, 37, 32, 0.85); /* tono oscuro de la paleta */
+  color: var(--color-secundario);
+  padding: 15px;
+  transform: translateY(100%);
+  transition: transform 0.3s ease;
+  text-align: center;
+}
+
+.character-card:hover .card-overlay {
+  transform: translateY(0);
+}
+
+.card-overlay h5 {
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: var(--color-secundario);
+}
+
+.card-overlay p {
+  font-size: 0.9rem;
+  margin: 0;
+}
+.character-card .card-img {
+  width: 100%;
+  height: 320px;      
+  object-fit: contain;  
+}
+.lightbox {
+  display: none;
+  position: fixed;
+  z-index: 1050;
+  left: 0; top: 0; width: 100vw; height: 100vh;
+  background: rgba(0,0,0,0.85);
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.lightbox-content {
+  max-width: 90vw;
+  max-height: 80vh;
+  margin: 2rem auto;
+  display: block;
+  border-radius: 12px;
+  box-shadow: 0 0 32px #000;
+}
+.lightbox .close {
+  color: #fff;
+  font-size: 2.5rem;
+  position: absolute;
+  top: 30px;
+  right: 50px;
+  cursor: pointer;
+  z-index: 1100;
+}
+#caption {
+  color: #ffffff;
+  text-align: center;
+  margin-top: 1rem;
+  font-size: 1.2rem;
+}
+.galeria-bg {
+  width: 100%;
+  background: url("../img/shack.webp") no-repeat center center/cover;
+
+}
+.card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 20px;
+  border: 4px solid #dec387; /* tu marco */
+  box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+  transition: transform 0.3s;
+  background: transparent; /* 👈 transparente para ver el fondo */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;   /* mantiene proporción */
+  object-position: center;
+  display: block;
+  background: transparent; /* 👈 asegura transparencia detrás de la imagen */
+}
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: url("../img/pueblo.webp") no-repeat center center fixed; 
+  background-size: cover;       /* La hace ocupar toda la pantalla */
+  color: #fff;                  /* texto por defecto blanco */
+}
+.diario-section {
+  display: flex;
+  width: 100%;
+  min-height: 80vh; /* ocupa buena parte de la pantalla */
+}
+
+.diario-izquierda,
+.diario-derecha {
+  flex: 1; /* cada lado ocupa la mitad */
+  background-size: cover;
+  background-position: center;
+}
+
+/* Página en blanco (lado izquierdo) */
+.diario-izquierda {
+  background: url("../img/paginablanco.jpg") no-repeat center center;
+  background-size: cover;
+}
+
+/* Página del diario original (lado derecho) */
+/*.diario-derecha {
+  background: url("../img/OJOS.jpg") no-repeat center center;
+  background-size: cover;
+}*/
+
+main.diario-section h2,
+main.diario-section p {
+  font-family: 'Diario';
+  font-size: 1.5rem;
+}
+.diario-derecha {
+  background: url("../img/OJOS\ \(1\).jpg") no-repeat center center;
+  background-size: cover;   /* Así se ve completa aunque haya franjas */
+
+}
+/* Fondo amarillo y fuente personalizada en los campos del formulario de contacto */
+form input[type="text"],
+form input[type="email"],
+form textarea {
+  background: #ffe066;
+  color: #352520;
+  font-family: 'Diario', Arial, sans-serif;
+  border: 2px solid #dec387;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  padding: 0.75rem 1rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  transition: border-color 0.2s;
+}
+
+form input[type="text"]:focus,
+form input[type="email"]:focus,
+form textarea:focus {
+  border-color: #f7971e;
+  outline: none;
+}
+form .form-control {
+  background: #ffe066 !important;
+  color: #352520 !important;
+  font-family: 'Diario', Arial, sans-serif !important;
+  border: 2px solid #dec387 !important;
+  border-radius: 8px !important;
+  font-size: 1.1rem !important;
+  padding: 0.75rem 1rem !important;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06) !important;
+  transition: border-color 0.2s;
+}
+
+form .form-control:focus {
+  border-color: #f7971e !important;
+  outline: none !important;
+}
+/* Cambia la fuente de las etiquetas del formulario */
+form label, form h2, form button {
+  font-family: 'Diario', Arial, sans-serif;
+    text-shadow: 
+    -2px -2px 0 #000000,  
+    2px -2px 0 #000000,
+    -2px 2px 0 #000000,
+    2px 2px 0 #000000;
+}
+form button,
+form .btn {
+  background: #5e1514;
+  color: var(--color-secundario) ;
+  font-family: 'Diario', Arial, sans-serif;
+  border: 2px solid #330c08 ;
+  border-radius: 8px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  padding: 0.75rem 1.5rem;
+  box-shadow: 0 2px 8px rgba(18,8,5,0.15);
+  letter-spacing: 1px;
+}
+
+
+form iframe,
+.mapa iframe {
+  border-radius: 16px;
+}
+.h2-contacto {
+  text-align: center;
+  font-family: 'gravitation falls';
+  color: var(--color-secundario);
+  margin-bottom: 2rem;
+  font-size: 2rem;
+  text-shadow: 
+    -2px -2px 0 #000000,  
+    2px -2px 0 #000000,
+    -2px 2px 0 #000000,
+    2px 2px 0 #000000;
+}
+
+.btn-enviar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #330c08;
+  font-family: 'Diario', Arial, sans-serif;
+  border: 2px solid #5e1514;
+  border-radius: 8px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  padding: 0.75rem 1.5rem;
+  box-shadow: 0 2px 8px rgba(18,8,5,0.15);
+  letter-spacing: 1px;
+  text-align: center;
+  min-width: 180px;
+  min-height: 56px;
+}
+
+.btn-enviar .result {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  gap: 2px;
+}
+.btn-enviar:hover .texto-enviar {
+  display: none;
+}
+.btn-enviar:hover .result {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #5e1514;
+  color: #330c08;
+  font-family: 'Diario', Arial, sans-serif;
+  border: 2px solid #5e1514;
+  border-radius: 8px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  padding: 0.75rem 1.5rem;
+  box-shadow: 0 2px 8px rgba(18,8,5,0.15);
+  letter-spacing: 1px;
+  text-align: center;
+  min-width: 180px;
+  min-height: 56px;
+}
+.episode-summary {
+  display: none;
+  padding-left: 20px;
+  font-family: 'Diario';
+  font-size: 0.9em;
+  color: white;
+  margin-top: 5px;
+}
+.lista-episodios li:hover {
+  background: var(--color-acento);
+  color: var(--color-secundario);
+  cursor: pointer;
+  border-radius: 8px;
+  transition: background 0.2s, color 0.2s;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+}
+html, body {
+  height: 100%;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+footer {
+  margin-top: 10px;
+  width: 100%;
+}
+/* Layout exclusivo para temporadas */
+.layout-temporadas {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.layout-temporadas main {
+  flex: 1;
+}
+
+/* Footer de temporadas */
+.f-footer {
+  background-color: var(--color-primario); /* igual que el navbar */
+  color: var(--color-secundario);
+  padding: 1rem 0;
+}
+
+.f-footer a {
+  color: white;
+  text-decoration: none;
+}
+
+.f-footer a:hover {
+  color: var(--color-secundario); 
+}
+
+/* Opcional: darle un poco de estilo a la lista de episodios */
+.lista-episodios {
+  list-style: none;
+  padding: 0;
+}
+
+.lista-episodios li {
+  margin-bottom: 1.5rem;
+}
+
+.episode-title {
+  font-weight: bold;
+  display: block;
+  margin-bottom: 0.25rem;
+  color: #5e1514;
+  font-family: 'Diario', Arial, sans-serif;
+}
+.accordion-button{
+  font-family: 'Gravitation Falls';
+    text-shadow: 
+    -2px -2px 0 #000000,  
+    2px -2px 0 #000000,
+    -2px 2px 0 #000000,
+    2px 2px 0 #000000;
+}
