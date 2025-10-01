@@ -10,6 +10,19 @@
   font-weight: normal;
   font-style: normal;
 }
+@media (min-width: 768px) {
+      .diario-section {
+        flex-wrap: nowrap;
+      }
+      .diario-izquierda, .diario-derecha {
+        flex: 1 1 50%;
+      }
+      .diario-derecha {
+        min-height: 400px;
+      }
+      .header-hero h1 {
+        font-size: 4rem;
+      }}
 
 /* ======== PALETA DE COLORES (Gravity Falls) ======== */
 :root {
