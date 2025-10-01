@@ -10,20 +10,105 @@
   font-weight: normal;
   font-style: normal;
 }
-@media (min-width: 768px) {
-      .diario-section {
-        flex-wrap: nowrap;
-      }
-      .diario-izquierda, .diario-derecha {
-        flex: 1 1 50%;
-      }
-      .diario-derecha {
-        min-height: 400px;
-      }
-      .header-hero h1 {
-        font-size: 4rem;
-      }}
+/* --- Responsive para móviles y tablets --- */
+@media (max-width: 991.98px) {
+  .header-hero {
+    min-height: 50vh;
+    padding: 2rem 1rem;
+    font-size: 1.2rem;
+  }
+  .header-hero h1 {
+    font-size: 2.2rem !important;
+  }
+  .diario-section {
+    flex-direction: column;
+    min-height: 60vh;
+  }
+  .diario-izquierda,
+  .diario-derecha {
+    flex: 1 1 100%;
+    min-height: 220px;
+    padding: 1rem;
+  }
+  .diario-izquierda {
+    background-size: cover;
+    padding: 1rem 0.5rem;
+  }
+  .diario-derecha {
+    min-height: 180px;
+    background-size: cover;
+    margin-top: 0;
+  }
+  .navbar-brand img {
+    height: 36px;
+    max-width: 120px;
+  }
+  .f-footer {
+    font-size: 0.95rem;
+    padding: 1rem 0.5rem;
+  }
+  main.diario-section h2,
+  main.diario-section p {
+    font-size: 1.1rem;
+  }
+}
 
+@media (max-width: 575.98px) {
+  .header-hero {
+    min-height: 60px;
+    padding: 0.5rem 0.5rem;
+  }
+  .diario-section {
+    min-height: unset;
+    padding: 1rem 0.5rem;
+    flex-direction: column;
+  }
+  .diario-izquierda {
+    padding: 0.5rem;
+    font-size: 1rem;
+    overflow: visible;
+    max-width: 100%;
+    word-break: break-word;
+  }
+  .diario-izquierda .result {
+    flex-wrap: wrap;
+  }
+  .diario-izquierda .result img {
+    max-width: 22px;
+    height: auto;
+    margin: 1px;
+  }
+}
+
+/* --- Galería y cards responsive --- */
+@media (max-width: 767.98px) {
+  .character-card .card-img {
+    height: 180px;
+  }
+  .card {
+    border-radius: 12px;
+    border-width: 2px;
+  }
+}
+
+/* --- Footer siempre abajo --- */
+@media (max-width: 991.98px) {
+  footer {
+    margin-top: 20px;
+    padding: 10px 0;
+  }
+}
+
+/* --- Ajustes generales para imágenes --- */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* --- Evita desbordes horizontales --- */
+body, html {
+  overflow-x: hidden;
+}
 /* ======== PALETA DE COLORES (Gravity Falls) ======== */
 :root {
   --color-primario: #352520;   /* fondo oscuro */
@@ -526,3 +611,14 @@ footer {
     -2px 2px 0 #000000,
     2px 2px 0 #000000;
 }
+.navbar,
+.navbar-collapse {
+  z-index: 1050 !important;
+  position: relative;
+}
+
+.header-hero {
+  z-index: 1;
+  position: relative;
+}
+
