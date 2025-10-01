@@ -78,9 +78,14 @@
     height: auto;
     margin: 1px;
   }
+  main.diario-section h2 {
+    font-size: 1.1rem;
+  }
   main.diario-section p {
-    font-size: 0.5rem;
+    font-size: 0.92rem;
     line-height: 1.3;
+    word-break: break-word;
+    margin-bottom: 0.5rem;
   }
 }
 
