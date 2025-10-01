@@ -87,6 +87,12 @@
     word-break: break-word;
     margin-bottom: 0.5rem;
   }
+  .diario-derecha {
+    display: none !important;
+  }
+  .diario-section {
+    background: url('../img/diario.png') center/cover no-repeat;
+  }
 }
 
 /* --- Galería y cards responsive --- */
