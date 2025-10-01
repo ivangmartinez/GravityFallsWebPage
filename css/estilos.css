@@ -78,6 +78,10 @@
     height: auto;
     margin: 1px;
   }
+  main.diario-section p {
+    font-size: 0.5rem;
+    line-height: 1.3;
+  }
 }
 
 /* --- Galería y cards responsive --- */
